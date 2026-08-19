@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">
+	body
+	{
+	
+	 min-height:100vh;
+	 width: 100%;
+	 margin: 0;
+     background:linear-gradient(black,purple);
+     color:white;
+     	font-style:poppins,sans-serif;
+	}
+	nav
+	{
+		display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 5%;
+	background:black;
+	width: 100%;
+	top: 0;
+    box-sizing: border-box;
+	}
+	nav a{
+		text-decoration: none;
+		color: white;
+	}
+	#a
+	{
+		text-align: center;
+		padding-top: 10%;
+        font-size: 20px;
+	}
+	button
+    {
+    	height: 30px;
+    	width: 100px;
+    	background-color: white;
+    	color: black;
+    }
+    button:hover
+    {
+    	background-color: purple;
+    }
+    @media screen and (max-width:768px){
+	.navbar{
+		flex-direction: column;
+		padding: 20px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.nav-links{
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.home{
+		height: auto;
+		padding-top: 100px;
+	}
+	.nav-links li{
+		margin: 10px 0;
+	}
+	#a
+	{
+		padding-top: 100px;
+		font-size: 18px;
+	}
+	button
+	{
+		width: 120px;
+	}
+}
+</style>
+</head>
+<body>
+	<nav>
+	<a href="about.html">About</a>
+	<a href="skills.html">Skills</a>
+	<a href="project.html">Project</a>
+	</nav> 
+<div id="a"><h1>Hi👋,I`m Tanu</h1><h2>Frontend Devloper Fresher.</h2><P>I Create responsive and user-friendly website using HTML,CSS Javascript.
+I am Eager to learn,grow,and build modern Website.</P>	<button>Hire Me</button></div>
+<script>document.querySelector("button").addEventListener("click",function(){
+	alert("Thanks For Visiting My Portfolio");
+});</script>
+</body>
+</html>
