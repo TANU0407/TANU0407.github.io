@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TIC TAC TOE</title>
+</head>
+<style type="text/css">
+	*
+	{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body
+	{
+		background: #548687;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-family: Arial, sans-serif;
+	}
+	.container
+	{
+		text-align: center;
+	}
+	h1
+	{
+		color: white;
+		margin-bottom: 20px;
+	}
+	.board
+	{
+		display: grid;
+		grid-template-columns: repeat(3, 100px);
+		gap: 10px;
+	    justify-content: center;
+	}
+	.box
+	{
+		width: 100px;
+		height: 100px;
+		font-size: 40px;
+		border: none;
+		border-radius: 10px;
+		background: white;
+	    cursor: pointer;
+	}
+	#reset
+	{
+		margin-top: 20px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		background: black;
+		color: white;
+		cursor: pointer;
+	}
+	#msg
+	{
+		margin-top: 20px;
+		color: white;
+		font-size: 24px;
+	}
+</style>
+<body>
+<div class="container">
+	<h1>Tic Tac Toe</h1>
+	<div class="board">
+
+		<button class="box"></button>
+		<button class="box"></button>
+		<button class="box"></button>
+
+		<button class="box"></button>
+		<button class="box"></button>
+		<button class="box"></button>
+
+		<button class="box"></button>
+		<button class="box"></button>
+		<button class="box"></button>
+
+	</div>
+	<p id="msg"></p>
+	<button id="reset">Reset</button>
+	<button id="new-game">New Game</button>
+</div>
+<script type="text/javascript">
+	let boxes =
+	document.querySelectorAll(".box");
+	let resetBtn =
+	document.querySelector("#reset");
+	let newGameBtn =
+	document.querySelector("#new-game");
+	let msg =
+	document.querySelector("#msg")
+	let turn0 =true;
+	const winPatterns = [
+	[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],
+	[2,5,8],[0,4,8],[2,4,6]
+	];
+	boxes.forEach((box) => {
+		box.addEventListener("click", () => {
+		if(turn0){
+			box.innerText ="0";
+			turn0 = false;
+		}
+		else{
+			box.innerText="X";
+			turn0=true;
+		}	
+		box.disabled=true;
+		checkWinner();
+		});
+	});
+	function checkWinner() {
+		for (let pattern of winPatterns){
+			let pos1 = 
+			boxes[pattern[0]].innerText;
+			let pos2 = 
+			boxes[pattern[1]].innerText;
+			let pos3 = 
+			boxes[pattern[2]].innerText;
+
+			if(pos1 != "" && pos2 != "" && pos3 != ""){
+				if (pos1 === pos2 && pos2 === pos3){
+					msg.innerText = pos1 + "winner!";
+
+				}
+			}
+		}
+	}
+	function resetGame(){
+		turn0 = true;
+		boxes.forEach((box) => {
+			box.innerText ="";
+			box.disabled = false;
+		});
+		msg.innerText = "";
+	}
+	resetBtn.addEventListener("click",resetGame);
+	newGameBtn.addEventListener("click",resetGame);
+</script>
+</body>
+</html>
