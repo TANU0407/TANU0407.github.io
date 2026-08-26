@@ -25,26 +25,13 @@
 	}
 </style>
 <body>
-<h1>Background Color Change.</h1>
-<button onclick="changeColor()">Change Color</button>
+<h1>Change Background Color</h1>
+<button onclick="a()">Onclick</button>
 <script type="text/javascript">
-	function changeColor()
-	{
-		let colors = [
-			"linear-gradient(black,white,black)",
-			"linear-gradient(black,purple,black)",
-			"linear-gradient(black,cyan,black)",
-			"linear-gradient(black,green,black)",
-            "linear-gradient(black,gray,black)",
-            "linear-gradient(cyan,gray,cyan)",
-            "linear-gradient(black,purple,brown)"
-		];
-		let random = 
-		Math.floor(Math.random() *
-			colors.length);
-		document.body.style.background = 
-		colors[random];
-	}
+	let a = function(){
+		document.body.style.background =
+		"linear-gradient(to right,purple,white)";
+	};
 </script>
 </body>
 </html>
