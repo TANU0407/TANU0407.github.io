@@ -3,50 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Digital Clock</title>
+	<title></title>
 </head>
-<style type="text/css">
-	*
-	{
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		font-family: Arial, sans-serif;
-	}
-	body
-	{
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: linear-gradient(to right,black,white,black);
-	}
-	.Clock
-	{
-		text-align: 100vh;
-		background: white;
-		padding: 30px;
-		border-radius: 10px;
-		box-shadow: 0 0 15px cyan;
-	}
-	h1
-	{
-		color: black;
-		margin-bottom: 20px;
-	}
-	#time
-	{
-		font-size: 50px;
-		color: cyan;
-		font-weight: bold;
-	}
-	#date
-	{
-		margin-top: 10px;
-		font-size: 20px;
-		color: cyan;
-	}
-</style>
 <body>
 <h1 id="clock">00:00:00</h1>
 <script type="text/javascript">
@@ -59,5 +17,6 @@
 		hours + ":" + minutes + ":" + seconds;
 	}
 	setInterval(showTime,1000);
+</script>
 </body>
 </html>
