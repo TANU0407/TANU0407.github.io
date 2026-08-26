@@ -48,35 +48,16 @@
 	}
 </style>
 <body>
-<div class="Clock">
-	<h1>Digital Clock</h1>
-	<div id="time">00:00:00</div>
-	<div id="date"></div>
-</div>
+<h1 id="clock">00:00:00</h1>
 <script type="text/javascript">
-	let time =
-	document.querySelector("#time");
-	let date =
-	document.querySelector("#date");
-	function digitalClock(){
-		let now = new Date();
-		let hour = now.getHours();
-		let minute = now.getMinutes();
-		let second = now.getSeconds(); 
-		if (hour > 12) {
-			hour = hour - 12;
-		}
-		if(hour == 0){
-			hour = 12;
-		}
-		hour = hour < 10 ? "0"+hour :hour;
-		minute = minute < 10 ? "0"+minute:minute;
-		second = second < 10 ? "0"+second:second;
-		time.innerText = hour + ":" + minute + ":" + second;
-		date.innerText = now.toDateString();
+	function showTime(){
+		let date = new Date();
+		let hours = date.getHours();
+		let minutes = date.getMinutes();
+		let seconds = date.getSeconds();
+		document.getElementById("clock").innerHTML = 
+		hours + ":" + minutes + ":" + seconds;
 	}
-	digitalClock();
-	setInterval(digitalClock,1000);
-</script>
+	setInterval(showTime,1000);</script>
 </body>
 </html>
